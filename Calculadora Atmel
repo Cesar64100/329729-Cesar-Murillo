@@ -1,0 +1,37 @@
+;suma
+LDI R16,5
+LDI R17,4
+ADD R16,R17
+OUT PORTB,R16
+;resta
+LDI R18,7
+LDI R19,5
+sub R18,R19
+OUT PORTC,R18
+;multiplicacion
+.DEF num1 = R21
+.DEF num2 = R22
+.DEF resu = R23
+.DEF aux = R24
+LDI num1, 3
+LDI num2, 2
+LDI resu, 0
+LDI aux, 1
+    multi:
+        ADD resu,num1
+        SUB num2,aux
+        BRCC multi
+        SUB resu,num1
+;division
+.DEF divisor =R25
+.DEF dividendo =R26
+.DEF resultado =R27
+LDI divisor, 2
+LDI dividendo, 6
+LDI resultado, 0
+    division:
+        INC resultado 
+        SUB dividendo,divisor
+        BRCC division
+		DEC resultado
+HERE: JMP HERE
