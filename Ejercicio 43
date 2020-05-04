@@ -1,0 +1,30 @@
+;problema 
+;Cesar Murillo
+LDI R28,0x11
+.EQU temp0=0x60
+.EQU temp1=0x61
+.EQU temp2=0x62
+.EQU temp3=0x63
+.EQU temp4=0x64
+.EQU temp5=0x65
+STS temp0,R28
+STS temp1,R28
+STS temp2,R28
+STS temp3,R28
+STS temp4,R28
+STS temp5,R28
+LDI R21,temp0
+LDI R22,temp1
+LDI R23,temp2
+LDI R24,temp3
+LDI R25,temp4
+LDI R26,temp5
+ADD R29,R21
+ADD R29,R22
+ADD R29,R23
+ADD R29,R24
+ADD R29,R25
+ADD R29,R26
+OUT PORTB,R29
+HERE: JMP HERE
+
